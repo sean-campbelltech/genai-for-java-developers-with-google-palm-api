@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.campbelltech'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    // Note: Remember to add the Maven Local repository
+    mavenLocal()
+}
+
+dependencies {
+    // PaLM API dependencies
+    implementation 'com.google.cloud:gapic-google-cloud-ai-generativelanguage-v1beta3-java:0.0.0-SNAPSHOT'
+    implementation 'io.grpc:grpc-okhttp:1.53.0'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
