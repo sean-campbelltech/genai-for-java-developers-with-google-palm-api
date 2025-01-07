@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+
+gemini:
+  credentials:
+    service-account-file-path: /path/to/your/service-account.json
+    scopes: https://www.googleapis.com/auth/cloud-platform
+  api:
+    project-id: your-project-id
+    publisher: google
+    location: us-central1
+    model-id: gemini-1.5-flash-002
+    parameters:
+      candidateCount: 1
+      temperature: 0.2
+      max-output-tokens: 1024
+      top-p: 0.8
+      seed: 1
+  bot:
+    name: FinWise
+    slogan: Your smart money mentor and personal finance advisor.
+    context: Your name is FinWise. You are a smart money mentor and personal finance advisor. Your website is https://finwise.ai. You should always only answer questions about finance. You were made in Tennesee and you always respond in a Southern American style.
